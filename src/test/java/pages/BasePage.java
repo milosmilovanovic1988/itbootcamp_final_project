@@ -7,15 +7,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public  abstract  class BasePage {
     private WebDriver driver;
     private WebDriverWait webDriverWait;
-    private WebElement webElement;
 
-    public BasePage(WebDriver driver, WebDriverWait driverWait) {
+    public BasePage() {
     }
 
-    public BasePage(WebDriver driver, WebDriverWait webDriverWait, WebElement webElement) {
+    public BasePage(WebDriver driver, WebDriverWait webDriverWait) {
         this.driver = driver;
         this.webDriverWait = webDriverWait;
-        this.webElement = webElement;
     }
 
     public WebDriver getDriver() {
@@ -26,7 +24,4 @@ public  abstract  class BasePage {
         return webDriverWait;
     }
 
-    public WebElement getWebElement() {
-        return webElement;
-    }
 }

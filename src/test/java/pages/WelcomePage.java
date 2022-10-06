@@ -14,7 +14,7 @@ public class WelcomePage extends BasePage {
 
     private By adminButton = By.xpath("//*[@id=\"app\"]/div[1]/div/header/div/div[3]/button[1]");
 
-    private By citiesButton = By.xpath("//*[@id=\"list-item-117\"]");
+    private By citiesButton = By.xpath("//*[@id=\"app\"]/div[3]/div[1]/a[1]");
 
     private By profileButton = By.xpath("//*[@id=\"app\"]/div[1]/div/header/div/div[3]/a[3]");
 

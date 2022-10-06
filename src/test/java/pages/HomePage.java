@@ -55,7 +55,7 @@ public class HomePage extends BasePage {
         getSignUpButton().click();
     }
     public void clicklanguageButton(){
-        getLoginButton().click();
+        getLanguageButton().click();
     }
     public void clickEnLanguage(){
         getEnLanguage().click();
@@ -75,6 +75,7 @@ public class HomePage extends BasePage {
     public void waitEs(){
         getWebDriverWait().until(ExpectedConditions.presenceOfElementLocated(esLanguage));
     }
+
 
 
 

@@ -18,8 +18,6 @@ public class CitiesPage extends BasePage {
 
     private By editButton = By.id("edit");
 
-    private By table = By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div[1]/div[2]/table");
-
     private By search = By.id("search");
 
     private By searchedCityName = By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div[1]/div[2]/table/tbody/tr/td[2]");
@@ -35,7 +33,7 @@ public class CitiesPage extends BasePage {
         super(driver, driverWait);
     }
 
-    public WebElement getNewItemButton() {
+    public WebElement getNewItemBtn() {
         return getDriver().findElement(newItemButton);
     }
 
@@ -43,15 +41,15 @@ public class CitiesPage extends BasePage {
         return getDriver().findElement(cityName);
     }
 
-    public WebElement getSaveButton() {
+    public WebElement getSaveBtn() {
         return getDriver().findElement(saveButton);
     }
 
-    public WebElement getSaveSuccessfullyMsg() {
+    public WebElement getSuccMsg() {
         return getDriver().findElement(saveSuccessfullyMsg);
     }
 
-    public WebElement getEditButton() {
+    public WebElement getEditBtn() {
         return getDriver().findElement(editButton);
     }
 
@@ -59,32 +57,32 @@ public class CitiesPage extends BasePage {
         return getDriver().findElement(search);
     }
 
-    public WebElement getSearchedCityName() {
+    public WebElement getSearhByName() {
         return getDriver().findElement(searchedCityName);
     }
 
-    public WebElement getDeleteButton() {
+    public WebElement getDeleteBtn() {
         return getDriver().findElement(deleteButton);
     }
 
-    public WebElement getModalDeleteButton() {
+    public WebElement getModalDeleteBtn() {
         return getDriver().findElement(modalDeleteButton);
     }
 
-    public WebElement getDeleteMessage() {
+    public WebElement getDeleteMsg() {
         return getDriver().findElement(deleteMessage);
     }
 
-    public void newCityCreate(String cityName){
-        getNewItemButton().click();
+    public void createNewCity(String cityName){
+        getNewItemBtn().click();
         getCityName().sendKeys(cityName);
-        getSaveButton().click();
+        getSaveBtn().click();
     }
 
     public void editCity(String editedCityName){
-        getEditButton().click();
+        getEditBtn().click();
         getCityName().sendKeys(editedCityName);
-        getSaveButton().click();
+        getSaveBtn().click();
     }
 
     public void searchCity(String cityName){
@@ -92,15 +90,15 @@ public class CitiesPage extends BasePage {
     }
 
     public void deleteCity(){
-        getDeleteButton().click();
-        getModalDeleteButton().click();
+        getDeleteBtn().click();
+        getModalDeleteBtn().click();
     }
 
-    public void getSaveSuccessfullyMsgWaiter() {
+    public void getSaveWaiter() {
         getWebDriverWait().until(ExpectedConditions.presenceOfElementLocated(saveSuccessfullyMsg));
     }
 
-    public void getSearchedCityNameWaiter() {
+    public void getSearchWaiter() {
         getWebDriverWait().until(ExpectedConditions.presenceOfElementLocated(searchedCityName));
     }
 

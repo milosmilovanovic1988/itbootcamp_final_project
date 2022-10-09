@@ -1,32 +1,51 @@
 package tests;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LoginTests extends  BaseTest{
 
+    //Test #1: Visits the login page
+    //assert:
+    //Verifikovati da se u url-u stranice javlja ruta /login
+
     @Test
-    public void loginTest1() {
+    public void urlTest() {
         String exRes = "https://vue-demo.daniel-avellaneda.com/login";
         homePage.getWebDriverWait().until(ExpectedConditions.visibilityOf(homePage.getLoginButton()));
         homePage.clickLoginButton();
         String acRes = homePage.getDriver().getCurrentUrl();
         Assert.assertEquals(acRes, exRes);
+
     }
 
+    //Test #2: Checks input types
+    //assert:
+    //Verifikovati da polje za unos emaila za atribut type ima vrednost email
+    //Verifikovati da polje za unos lozinke za atribut type ima vrednost password
+
     @Test
-    public void loginTest2() {
+    public void validateEmailAndPassField() {
         String exRes = "email";
-        String expectedResultPassword = "password";
+        String exResPas = "password";
         homePage.clickLoginButton();
-        String actualResultEmail = loginPage.getEmail().getAttribute("type");
-        String actualResultPassword = loginPage.getPassword().getAttribute("type");
-        Assert.assertEquals(exRes, actualResultEmail);
-        Assert.assertEquals(expectedResultPassword, actualResultPassword);
+        String accResPass = loginPage.getEmail().getAttribute("type");
+        String accRessPass = loginPage.getPassword().getAttribute("type");
+        Assert.assertEquals(exRes, accResPass);
+        Assert.assertEquals(exResPas, accRessPass);
+        getDriver().manage().deleteAllCookies();
     }
+
+    //Test #3: Displays errors when user does not exist
+    //Podaci: random email i password koristeći faker libarary
+    //asssert:
+    //Verifikovati da greska sadrzi poruku User does not exists
+    //Verifikovati da se u url-u stranice javlja /login ruta
+
     @Test
-    public void loginTest3() {
+    public void userDoesNotExist() {
         String exRes = "User does not exists";
         homePage.clickLoginButton();
         String exResUrl = "https://vue-demo.daniel-avellaneda.com/login";
@@ -37,38 +56,65 @@ public class LoginTests extends  BaseTest{
         Assert.assertEquals(exResUrl, acRes);
     }
 
+    //Test #4: Displays errors when password is wrong
+    //Podaci: email: admin@admin.com i proizvoljan password
+    //
+    //asssert:
+    //Verifikovati da greska sadrzi poruku Wrong password
+    //Verifikovati da se u url-u stranice javlja /login ruta
+
     @Test
-    public void loginTest4() {
+    public void wrongPass() {
         String exRes = "Wrong password";
         homePage.clickLoginButton();
         String acRes = "https://vue-demo.daniel-avellaneda.com/login";
-        loginPage.login(" admin@admin.com", faker.internet().password());
+        loginPage.login(" admin@admin.com", "abcde");
         String actualResultMessage = loginPage.getErrorMessage().getText();
         Assert.assertTrue(actualResultMessage.contains(exRes));
         String actualResultUrl = homePage.getDriver().getCurrentUrl();
         Assert.assertEquals(acRes, actualResultUrl);
     }
 
+    //Test #5: Login
+    //Podaci:
+    //email: admin@admin.com
+    //password: 12345
+    //asssert:
+    //Verifikovati da se u url-u stranice javlja /home ruta
+
     @Test
-    public void loginTest5() {
+    public void adminLogin() {
         homePage.clickLoginButton();
         String exRes = "https://vue-demo.daniel-avellaneda.com/home";
         loginPage.login("admin@admin.com", "12345");
-        getDriverWait().until(ExpectedConditions.urlContains("/home"));
+        getDriverWait().until(ExpectedConditions.urlContains("https://vue-demo.daniel-avellaneda.com/home"));
         String acRes = homePage.getDriver().getCurrentUrl();
         Assert.assertEquals(acRes, exRes);
     }
 
+
+    //Test #6: Logout
+    //assert:
+    //Verifikovati da je dugme logout vidljivo na stranici
+    //Verifikovati da se u url-u stranice javlja /login ruta
+    //Verifikovati da se nakon pokušaja otvaranja /home rute,
+    // u url-u stranice javlja /login ruta (otvoriti sa driver.get home page i proveriti da li vas redirektuje na login)
+
     @Test
-    public void loginTest6() {
+    public void logoutTest() {
         homePage.clickLoginButton();
         String exRes = "https://vue-demo.daniel-avellaneda.com/login";
+        //Verifikovati da se u url-u stranice javlja /login ruta
+        Assert.assertTrue(getDriver().getCurrentUrl().contains("/login"));
         loginPage.login("admin@admin.com", "12345");
         welcomePage.logOutButtonWaiter();
-        welcomePage.clickGetLogOutButtonWp();
+        //Verifikovati da je dugme logout vidljivo na stranici
+        Assert.assertTrue(welcomePage.getloguouBtn().isDisplayed());
+        welcomePage.clickloguouBtn();
         getDriverWait().until(ExpectedConditions.urlContains("/login"));
         String acRes = loginPage.getDriver().getCurrentUrl();
         Assert.assertEquals(exRes, acRes);
+
     }
 
 

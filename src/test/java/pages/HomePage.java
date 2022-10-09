@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends BasePage {
@@ -24,9 +23,7 @@ public class HomePage extends BasePage {
     public WebElement getHomeButton() {
         return getDriver().findElement(homeButton);
     }
-    public WebElement getLoginButton() {
-        return getDriver().findElement(loginButton);
-    }
+    public WebElement getLoginButton() { return getDriver().findElement(loginButton);  }
     public WebElement getSignUpButton() {
         return getDriver().findElement(signUpButton);
     }
@@ -45,16 +42,12 @@ public class HomePage extends BasePage {
     public WebElement getHeaderText() {
         return getDriver().findElement(headerText);
     }
-    public void clickHomeButton(){
+    public void clickHomeBtn(){
         getHomeButton().click();
     }
-    public void clickLoginButton(){
-        getLoginButton().click();
-    }
-    public void clicksignUpButton(){
-        getSignUpButton().click();
-    }
-    public void clicklanguageButton(){
+    public void clickLoginBtn(){ getLoginButton().click(); }
+    public void clicksignUpBtn(){getSignUpButton().click(); }
+    public void clicklanguageBtn(){
         getLanguageButton().click();
     }
     public void clickEnLanguage(){

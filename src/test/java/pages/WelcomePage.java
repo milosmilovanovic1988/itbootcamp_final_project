@@ -8,79 +8,67 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WelcomePage extends BasePage {
 
-    private By logOutButton = By.xpath("//*[@id=\"app\"]/div[1]/div/header/div/div[3]/button[2]");
+    private By logoutBtn = By.xpath("//*[@id=\"app\"]/div[1]/div/header/div/div[3]/button[2]");
 
-    private By verifyAccountMsg = By.xpath("//*[@id=\"app\"]/div[4]/div/div/div[1]");
+    private By verifyAccMsg = By.xpath("//*[@id=\"app\"]/div[4]/div/div/div[1]");
 
-    private By adminButton = By.xpath("//*[@id=\"app\"]/div[1]/div/header/div/div[3]/button[1]");
+    private By admBtn = By.xpath("//*[@id=\"app\"]/div[1]/div/header/div/div[3]/button[1]");
 
-    private By citiesButton = By.xpath("//*[@id=\"app\"]/div[3]/div[1]/a[1]");
+    private By citiesBtn = By.xpath("//*[@id=\"app\"]/div[3]/div[1]/a[1]");
 
-    private By profileButton = By.xpath("//*[@id=\"app\"]/div[1]/div/header/div/div[3]/a[3]");
+    private By profileBtn = By.xpath("//*[@id=\"app\"]/div[1]/div/header/div/div[3]/a[3]");
 
-    private By closeModalButton = By.xpath("//*[@id=\"app\"]/div[4]/div/div/div[3]/button");
+    private By closeModalBtn = By.xpath("//*[@id=\"app\"]/div[4]/div/div/div[3]/button");
 
 
     public WelcomePage(WebDriver driver, WebDriverWait driverWait) {
         super(driver, driverWait);
     }
 
-    public WebElement getLogOutButtonWp() {
-        return getDriver().findElement(logOutButton);
+    public WebElement getloguouBtn() {
+        return getDriver().findElement(logoutBtn);
     }
 
     public WebElement getVerifyAccMsg() {
-        return getDriver().findElement(verifyAccountMsg );
+        return getDriver().findElement(verifyAccMsg);
     }
 
-    public WebElement getAdminButton() {
-        return getDriver().findElement(adminButton);
+    public WebElement getAdmBtn() {
+        return getDriver().findElement(admBtn);
     }
 
-    public WebElement getCitiesButton() {
-        return getDriver().findElement(citiesButton);
+    public WebElement getCitiesBtn() {
+        return getDriver().findElement(citiesBtn);
     }
 
-    public WebElement getProfileButton() {
-        return getDriver().findElement(profileButton);
-    }
-
-    public WebElement getCloseModalButton() {
-        return getDriver().findElement(closeModalButton);
+    public WebElement getProfileBtn() {
+        return getDriver().findElement(profileBtn);
     }
 
 
-    public void clickGetLogOutButtonWp() {
-        getLogOutButtonWp().click();
+    public void clickloguouBtn() {
+        getloguouBtn().click();
     }
 
     public void clickAdminButton() {
-        getAdminButton().click();
+        getAdmBtn().click();
     }
 
     public void clickCitiesButton() {
-        getCitiesButton().click();
-    }
-
-    public void clickProfileButton() {
-        getProfileButton().click();
-    }
-
-    public void clickCloseModalButton(){
-        getCloseModalButton().click();
+        getCitiesBtn().click();
     }
 
 
     public void logOutButtonWaiter() {
-        getWebDriverWait().until(ExpectedConditions.presenceOfElementLocated(logOutButton));
+        getWebDriverWait().until(ExpectedConditions.presenceOfElementLocated(logoutBtn));
     }
 
     public void citiesButtonWaiter() {
-        getWebDriverWait().until(ExpectedConditions.presenceOfElementLocated(citiesButton));
+        getWebDriverWait().until(ExpectedConditions.presenceOfElementLocated(citiesBtn));
     }
 
     public void closeModalButtonWaiter() {
-        getWebDriverWait().until(ExpectedConditions.presenceOfElementLocated(closeModalButton));
+        getWebDriverWait().until(ExpectedConditions.presenceOfElementLocated(closeModalBtn));
     }
 
 }

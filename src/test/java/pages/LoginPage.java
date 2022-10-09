@@ -49,9 +49,6 @@ public class LoginPage  extends  BasePage{
         getLogInBtn().click();
     }
 
-    public void waitForErrorMessage () {
-        getWebDriverWait().until(ExpectedConditions.presenceOfElementLocated(errorMessage));
-    }
 
 
 

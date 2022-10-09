@@ -66,15 +66,7 @@ public class HomePage extends BasePage {
     public void clickFrLanguage(){
         getFrLanguage().click();
     }
-    public void waitEn(){
-        getWebDriverWait().until(ExpectedConditions.presenceOfElementLocated(enLanguage));
-    }
-    public void waitFr(){
-        getWebDriverWait().until(ExpectedConditions.presenceOfElementLocated(frLanguage));
-    }
-    public void waitEs(){
-        getWebDriverWait().until(ExpectedConditions.presenceOfElementLocated(esLanguage));
-    }
+
 
 
 

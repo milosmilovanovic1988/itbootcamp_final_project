@@ -1,6 +1,5 @@
 package tests;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -31,11 +30,10 @@ public class LoginTests extends  BaseTest{
         String exRes = "email";
         String exResPas = "password";
         homePage.clickLoginButton();
-        String accResPass = loginPage.getEmail().getAttribute("type");
+        String accResMail = loginPage.getEmail().getAttribute("type");
         String accRessPass = loginPage.getPassword().getAttribute("type");
-        Assert.assertEquals(exRes, accResPass);
+        Assert.assertEquals(exRes, accResMail);
         Assert.assertEquals(exResPas, accRessPass);
-        getDriver().manage().deleteAllCookies();
     }
 
     //Test #3: Displays errors when user does not exist
@@ -50,8 +48,8 @@ public class LoginTests extends  BaseTest{
         homePage.clickLoginButton();
         String exResUrl = "https://vue-demo.daniel-avellaneda.com/login";
         loginPage.login(faker.internet().emailAddress(), faker.internet().password());
-        String actualResultMessage = loginPage.getErrorMessage().getText();
-        Assert.assertTrue(actualResultMessage.contains(exRes));
+        String acResMsg = loginPage.getErrorMessage().getText();
+        Assert.assertTrue(acResMsg.contains(exRes));
         String acRes = homePage.getDriver().getCurrentUrl();
         Assert.assertEquals(exResUrl, acRes);
     }
@@ -69,10 +67,10 @@ public class LoginTests extends  BaseTest{
         homePage.clickLoginButton();
         String acRes = "https://vue-demo.daniel-avellaneda.com/login";
         loginPage.login(" admin@admin.com", "abcde");
-        String actualResultMessage = loginPage.getErrorMessage().getText();
-        Assert.assertTrue(actualResultMessage.contains(exRes));
-        String actualResultUrl = homePage.getDriver().getCurrentUrl();
-        Assert.assertEquals(acRes, actualResultUrl);
+        String actualResMsg = loginPage.getErrorMessage().getText();
+        Assert.assertTrue(actualResMsg.contains(exRes));
+        String acResUrl = homePage.getDriver().getCurrentUrl();
+        Assert.assertEquals(acRes, acResUrl);
     }
 
     //Test #5: Login

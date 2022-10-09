@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -14,10 +15,10 @@ public class LocaleTests extends  BaseTest{
 
     @Test
     public void frLanguage() {
-        String exRes = "Page d'atterrissag";
+        String exRes = "Page d'atterrissage";
         getDriver().get("https://vue-demo.daniel-avellaneda.com/ ");
         homePage.clicklanguageButton();
-        homePage.waitFr();
+        driverWait.until(ExpectedConditions.visibilityOf(homePage.getFrLanguage()));
         homePage.clickFrLanguage();
         String acRes = homePage.getHeaderText().getText();
         Assert.assertEquals(acRes,exRes);
@@ -32,7 +33,7 @@ public class LocaleTests extends  BaseTest{
     public void enLanguage() {
         String exRes = "Landing";
         homePage.clicklanguageButton();
-        homePage.waitEn();
+        driverWait.until(ExpectedConditions.visibilityOf(homePage.getEnLanguage()));
         homePage.clickEnLanguage();
         String acRes = homePage.getHeaderText().getText();
         Assert.assertEquals(acRes, exRes);
@@ -48,7 +49,7 @@ public class LocaleTests extends  BaseTest{
         public void esLanguage() {
             String exRes = "Página de aterrizaje";
             homePage.clicklanguageButton();
-            homePage.waitEs();
+            driverWait.until(ExpectedConditions.visibilityOf(homePage.getEsLanguage()));
             homePage.clickEsLanguage();
             String acRes = homePage.getHeaderText().getText();
             Assert.assertEquals(acRes, exRes);

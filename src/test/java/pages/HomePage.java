@@ -20,55 +20,66 @@ public class HomePage extends BasePage {
     public HomePage(WebDriver driver, WebDriverWait webDriverWait) {
         super(driver, webDriverWait);
     }
+
     public WebElement getHomeButton() {
         return getDriver().findElement(homeButton);
     }
-    public WebElement getLoginButton() { return getDriver().findElement(loginButton);  }
+
+    public WebElement getLoginButton() {
+        return getDriver().findElement(loginButton);
+    }
+
     public WebElement getSignUpButton() {
         return getDriver().findElement(signUpButton);
     }
+
     public WebElement getLanguageButton() {
         return getDriver().findElement(languageButton);
     }
+
     public WebElement getEnLanguage() {
         return getDriver().findElement(enLanguage);
     }
+
     public WebElement getEsLanguage() {
         return getDriver().findElement(esLanguage);
     }
+
     public WebElement getFrLanguage() {
         return getDriver().findElement(frLanguage);
     }
+
     public WebElement getHeaderText() {
         return getDriver().findElement(headerText);
     }
-    public void clickHomeBtn(){
+
+    public void clickHomeBtn() {
         getHomeButton().click();
     }
-    public void clickLoginBtn(){ getLoginButton().click(); }
-    public void clicksignUpBtn(){getSignUpButton().click(); }
-    public void clicklanguageBtn(){
+
+    public void clickLoginBtn() {
+        getLoginButton().click();
+    }
+
+    public void clicksignUpBtn() {
+        getSignUpButton().click();
+    }
+
+    public void clicklanguageBtn() {
         getLanguageButton().click();
     }
-    public void clickEnLanguage(){
+
+    public void clickEnLanguage() {
         getEnLanguage().click();
     }
-    public void clickEsLanguage(){
+
+    public void clickEsLanguage() {
         getEsLanguage().click();
     }
-    public void clickFrLanguage(){
+
+    public void clickFrLanguage() {
         getFrLanguage().click();
     }
-
-
-
-
-
-
-
-
-
-
 
 
 }

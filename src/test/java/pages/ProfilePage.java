@@ -27,7 +27,6 @@ public class ProfilePage extends BasePage {
     private By message = By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div/div[4]/div/div/div/div/div[1]");
 
 
-
     public ProfilePage(WebDriver driver, WebDriverWait driverWait) {
         super(driver, driverWait);
     }
@@ -95,8 +94,6 @@ public class ProfilePage extends BasePage {
         Thread.sleep(2000);
         getSaveButton().click();
     }
-
-
 
 
 }

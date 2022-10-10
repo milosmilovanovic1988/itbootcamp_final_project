@@ -53,7 +53,6 @@ public class SignUpTests extends  BaseTest {
         signUpPage.signup("Lignjoslav Pipak", faker.internet().emailAddress(), "987654", "987654");
         Thread.sleep(5000);
         String acRes = welcomePage.getVerifyAccMsg().getText();
-        //System.out.println(welcomePage.getVerifyAccMsg().getText());
         Assert.assertTrue(acRes.contains(exRes));
     }
 

@@ -4,7 +4,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AdminCitiesTests extends  BaseTest{
+public class AdminCitiesTests extends BaseTest {
 
 
     //Test #1: Visits the admin cities page and list cities
@@ -16,7 +16,7 @@ public class AdminCitiesTests extends  BaseTest{
     //Verifikovati postojanje logout dugmeta
 
     @Test
-    public void  verifyCitiesPageAndListExists() {
+    public void verifyCitiesPageAndListExists() {
         homePage.clickLoginBtn();
         loginPage.login("admin@admin.com", "12345");
         welcomePage.clickAdminBtn();
@@ -128,7 +128,6 @@ public class AdminCitiesTests extends  BaseTest{
         String acResMsg = citiesPage.getDeleteMsg().getText();
         Assert.assertTrue(acResMsg.contains(exResMsg));
     }
-
 
 
 }

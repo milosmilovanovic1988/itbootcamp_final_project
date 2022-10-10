@@ -21,8 +21,6 @@ public class WelcomePage extends BasePage {
     private By profileBtn = By.xpath("//*[@id=\"app\"]/div[1]/div/header/div/div[3]/a[3]");
 
 
-
-
     public WelcomePage(WebDriver driver, WebDriverWait driverWait) {
         super(driver, driverWait);
     }
@@ -31,19 +29,29 @@ public class WelcomePage extends BasePage {
         return getDriver().findElement(logoutBtn);
     }
 
-    public WebElement getVerifyAccMsg() {  return getDriver().findElement(verifyAccMsg);   }
+    public WebElement getVerifyAccMsg() {
+        return getDriver().findElement(verifyAccMsg);
+    }
 
-    public WebElement getClosePopUoBtn() { return getDriver().findElement(closePopUoBtn); }
+    public WebElement getClosePopUoBtn() {
+        return getDriver().findElement(closePopUoBtn);
+    }
 
     public WebElement getAdmBtn() {
         return getDriver().findElement(admBtn);
     }
 
-    public WebElement getProfileButton() { return getDriver().findElement(profileBtn); }
+    public WebElement getProfileButton() {
+        return getDriver().findElement(profileBtn);
+    }
 
-    public void clickClosePopUoBtn() { getClosePopUoBtn().click(); }
+    public void clickClosePopUoBtn() {
+        getClosePopUoBtn().click();
+    }
 
-    public void clickProfileBtn() { getProfileButton().click(); }
+    public void clickProfileBtn() {
+        getProfileButton().click();
+    }
 
     public WebElement getCitiesBtn() {
         return getDriver().findElement(citiesBtn);
@@ -73,7 +81,6 @@ public class WelcomePage extends BasePage {
     public void cityWaiter() {
         getWebDriverWait().until(ExpectedConditions.presenceOfElementLocated(citiesBtn));
     }
-
 
 
 }

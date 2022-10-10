@@ -73,23 +73,23 @@ public class CitiesPage extends BasePage {
         return getDriver().findElement(deleteMessage);
     }
 
-    public void createNewCity(String cityName){
+    public void createNewCity(String cityName) {
         getNewItemBtn().click();
         getCityName().sendKeys(cityName);
         getSaveBtn().click();
     }
 
-    public void editCity(String editedCityName){
+    public void editCity(String editedCityName) {
         getEditBtn().click();
         getCityName().sendKeys(editedCityName);
         getSaveBtn().click();
     }
 
-    public void searchCity(String cityName){
+    public void searchCity(String cityName) {
         getSearch().sendKeys(cityName);
     }
 
-    public void deleteCity(){
+    public void deleteCity() {
         getDeleteBtn().click();
         getPopUpDeleteBtn().click();
     }

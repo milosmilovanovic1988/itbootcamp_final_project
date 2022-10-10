@@ -4,7 +4,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LoginTests extends  BaseTest{
+public class LoginTests extends BaseTest {
 
     //Test #1: Visits the login page
     //assert:
@@ -131,7 +131,6 @@ public class LoginTests extends  BaseTest{
         Assert.assertEquals(exRes, acRes);
 
     }
-
 
 
 }

@@ -24,26 +24,22 @@ public abstract class BaseTest {
     protected WelcomePage welcomePage;
 
 
-
-
     @BeforeClass
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "E:\\Chromedriver\\chromedriver.exe");
         driver = new ChromeDriver();
-       // driver.get("https://vue-demo.daniel-avellaneda.com/ ");
+        // driver.get("https://vue-demo.daniel-avellaneda.com/ ");
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         faker = new Faker();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        citiesPage = new CitiesPage(driver,driverWait);
-        profilePage = new ProfilePage(driver,driverWait);
-        signUpPage = new SignUpPage(driver,driverWait);
-        homePage = new HomePage(driver,driverWait);
-        welcomePage = new WelcomePage(driver,driverWait);
-        loginPage = new LoginPage(driver,driverWait);
-
-
+        citiesPage = new CitiesPage(driver, driverWait);
+        profilePage = new ProfilePage(driver, driverWait);
+        signUpPage = new SignUpPage(driver, driverWait);
+        homePage = new HomePage(driver, driverWait);
+        welcomePage = new WelcomePage(driver, driverWait);
+        loginPage = new LoginPage(driver, driverWait);
 
 
     }
@@ -56,10 +52,13 @@ public abstract class BaseTest {
 
     @BeforeMethod
     public void beforeMethod() {
-        driver.get("https://vue-demo.daniel-avellaneda.com");}
+        driver.get("https://vue-demo.daniel-avellaneda.com");
+    }
+
     public WebDriver getDriver() {
         return driver;
     }
+
     public WebDriverWait getDriverWait() {
         return driverWait;
     }
@@ -69,11 +68,6 @@ public abstract class BaseTest {
     public void afterMethod() throws InterruptedException {
         getDriverWait().withTimeout(Duration.ofSeconds(2));
     }*/
-
-
-
-
-
 
 
 }

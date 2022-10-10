@@ -18,7 +18,7 @@ public class AuthRoutesTests extends BaseTest {
         String exRes = "https://vue-demo.daniel-avellaneda.com/login";
         getDriver().get("https://vue-demo.daniel-avellaneda.com/home");
         String acRes = getDriver().getCurrentUrl();
-        Assert.assertEquals(acRes, exRes );
+        Assert.assertEquals(acRes, exRes);
     }
 
     //Test #2: Forbids visits to profile url if not authenticated
@@ -28,10 +28,10 @@ public class AuthRoutesTests extends BaseTest {
 
     @Test
     public void profileNotAuthenticated() {
-        String exRes  = "https://vue-demo.daniel-avellaneda.com/login";
+        String exRes = "https://vue-demo.daniel-avellaneda.com/login";
         getDriver().get("https://vue-demo.daniel-avellaneda.com/profile");
         String acRes = getDriver().getCurrentUrl();
-        Assert.assertEquals(acRes, exRes );
+        Assert.assertEquals(acRes, exRes);
     }
 
     //Test #3: Forbids visits to admin cities url if not authenticated
@@ -41,10 +41,10 @@ public class AuthRoutesTests extends BaseTest {
 
     @Test
     public void adminCitiesNotAuthenticated() {
-        String exRes  = "https://vue-demo.daniel-avellaneda.com/login";
+        String exRes = "https://vue-demo.daniel-avellaneda.com/login";
         getDriver().get("https://vue-demo.daniel-avellaneda.com/admin/cities");
         String acRes = getDriver().getCurrentUrl();
-        Assert.assertEquals(acRes, exRes );
+        Assert.assertEquals(acRes, exRes);
     }
 
     //Test #4: Forbids visits to admin users url if not authenticated
@@ -54,12 +54,11 @@ public class AuthRoutesTests extends BaseTest {
 
     @Test
     public void adminUrlNotAuthenticated() {
-        String exRes  = "https://vue-demo.daniel-avellaneda.com/login";
+        String exRes = "https://vue-demo.daniel-avellaneda.com/login";
         getDriver().get("https://vue-demo.daniel-avellaneda.com/admin/users");
         String acRes = getDriver().getCurrentUrl();
-        Assert.assertEquals(acRes, exRes );
+        Assert.assertEquals(acRes, exRes);
     }
-
 
 
 }

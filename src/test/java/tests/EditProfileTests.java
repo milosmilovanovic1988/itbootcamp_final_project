@@ -24,7 +24,7 @@ public class EditProfileTests extends BaseTest {
         signUpPage.signup(faker.name().username(), faker.internet().emailAddress(), "12345", "12345");
         welcomePage.clickClosePopUoBtn();
         welcomePage.clickProfileBtn();
-        profilePage.editProfile(faker.phoneNumber().phoneNumber(), faker.country().name(), "Cali",  "https://" + faker.internet().domainName(), "https://" + faker.internet().domainName());
+        profilePage.editProfile(faker.phoneNumber().phoneNumber(), faker.country().name(), "Cali", "https://" + faker.internet().domainName(), "https://" + faker.internet().domainName());
 
         //Verifikovati da je prikazana poruka Profile saved successfuly
         String exRes = "Profile saved successfuly";
@@ -40,7 +40,6 @@ public class EditProfileTests extends BaseTest {
 
         String acResTwitterUrl = profilePage.getTwitterUrl().getAttribute("type");
         String acResTel = profilePage.getPhoneField().getAttribute("type");
-       // System.out.println(profilePage.getPhoneField().getAttribute("type"));
         String acResGitHubUrl = profilePage.getGitHubUrl().getAttribute("type");
         String acResCountry = profilePage.getCountry().getAttribute("type");
         String acResCity = profilePage.getCityField().getAttribute("type");
@@ -50,7 +49,6 @@ public class EditProfileTests extends BaseTest {
         Assert.assertEquals(acResGitHubUrl, exResGitHubUrl);
         Assert.assertEquals(acResCity, exResCity);
         Assert.assertEquals(acResTwitterUrl, exResTwitterUrl);
-
 
 
     }

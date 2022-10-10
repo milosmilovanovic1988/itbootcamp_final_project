@@ -4,7 +4,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LocaleTests extends  BaseTest{
+public class LocaleTests extends BaseTest {
 
 
     //Test #3: Set locale to FR
@@ -21,7 +21,7 @@ public class LocaleTests extends  BaseTest{
 
         String exRes = "Page d'atterrissage";
         String acRes = homePage.getHeaderText().getText();
-        Assert.assertEquals(acRes,exRes);
+        Assert.assertEquals(acRes, exRes);
     }
 
     //Test #2: Set locale to EN
@@ -58,9 +58,6 @@ public class LocaleTests extends  BaseTest{
         String acRes = homePage.getHeaderText().getText();
         Assert.assertEquals(acRes, exRes);
     }
-
-
-
 
 
 }

@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPage  extends  BasePage{
+public class LoginPage extends BasePage {
 
     private By loginIcon = By.xpath("/html/body/div/div/div/header/div/div[3]/a[3]/span");
     private By email = By.id("email");
@@ -14,25 +14,23 @@ public class LoginPage  extends  BasePage{
     private By errorMessage = By.xpath("//*[@id=\"app\"]/div[1]/main/div/div[2]/div/div/div[4]/div/div/div/div/div[1]");
 
 
-
-
     public LoginPage(WebDriver driver, WebDriverWait webDriverWait) {
         super(driver, webDriverWait);
     }
 
-    public WebElement  getLoginIcon() {
+    public WebElement getLoginIcon() {
         return getDriver().findElement(loginIcon);
     }
 
-    public WebElement  getEmail() {
+    public WebElement getEmail() {
         return getDriver().findElement(email);
     }
 
-    public WebElement  getPassword() {
+    public WebElement getPassword() {
         return getDriver().findElement(password);
     }
 
-    public WebElement  getLogInBtn() {
+    public WebElement getLogInBtn() {
         return getDriver().findElement(logInBtn);
     }
 
@@ -40,16 +38,13 @@ public class LoginPage  extends  BasePage{
         return getDriver().findElement(errorMessage);
     }
 
-    public void login(String email, String password){
+    public void login(String email, String password) {
         getEmail().clear();
         getPassword().clear();
         getEmail().sendKeys(email);
         getPassword().sendKeys(password);
         getLogInBtn().click();
     }
-
-
-
 
 
 }

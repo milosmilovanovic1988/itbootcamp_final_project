@@ -13,7 +13,7 @@ public class LocaleTests extends  BaseTest{
     //Verifikovati da se na stranici u hederu javlja tekst Page d'atterrissage
 
 
-    @Test (priority = 1)
+    @Test
     public void frLanguage() {
         homePage.clicklanguageBtn();
         driverWait.until(ExpectedConditions.visibilityOf(homePage.getFrLanguage()));
@@ -29,7 +29,7 @@ public class LocaleTests extends  BaseTest{
     //Postaviti jezik na EN
     //Verifikovati da se na stranici u hederu javlja tekst Landing
 
-    @Test(priority = 2)
+    @Test
     public void enLanguage() {
 
         homePage.clicklanguageBtn();
@@ -41,23 +41,23 @@ public class LocaleTests extends  BaseTest{
         Assert.assertEquals(acRes, exRes);
     }
 
-        //Test #1: Set locale to ES
-        //assert:
-        //Postaviti jezik na ES
-        //Verifikovati da se na stranici u hederu javlja tekst Página de aterrizaje
+    //Test #1: Set locale to ES
+    //assert:
+    //Postaviti jezik na ES
+    //Verifikovati da se na stranici u hederu javlja tekst Página de aterrizaje
 
 
-        @Test(priority = 3)
-        public void esLanguage() {
+    @Test
+    public void esLanguage() {
 
-            homePage.clicklanguageBtn();
-            driverWait.until(ExpectedConditions.visibilityOf(homePage.getEsLanguage()));
-            homePage.clickEsLanguage();
+        homePage.clicklanguageBtn();
+        driverWait.until(ExpectedConditions.visibilityOf(homePage.getEsLanguage()));
+        homePage.clickEsLanguage();
 
-            String exRes = "Página de aterrizaje";
-            String acRes = homePage.getHeaderText().getText();
-            Assert.assertEquals(acRes, exRes);
-        }
+        String exRes = "Página de aterrizaje";
+        String acRes = homePage.getHeaderText().getText();
+        Assert.assertEquals(acRes, exRes);
+    }
 
 
 

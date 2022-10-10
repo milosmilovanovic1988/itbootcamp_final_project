@@ -13,7 +13,7 @@ public class AuthRoutesTests extends BaseTest {
     //Ucitati /home stranu kada korisnik nije ulogovan
     //Verifikovati da se u url-u stranice javlja ruta /login
 
-    @Test(priority = 1)
+    @Test
     public void homeNotAuthenticated() {
         String exRes = "https://vue-demo.daniel-avellaneda.com/login";
         getDriver().get("https://vue-demo.daniel-avellaneda.com/home");
@@ -26,7 +26,7 @@ public class AuthRoutesTests extends BaseTest {
     //Ucitati /profile stranu
     //Verifikovati da se u url-u stranice javlja ruta /login
 
-    @Test(priority = 2)
+    @Test
     public void profileNotAuthenticated() {
         String exRes  = "https://vue-demo.daniel-avellaneda.com/login";
         getDriver().get("https://vue-demo.daniel-avellaneda.com/profile");
@@ -39,7 +39,7 @@ public class AuthRoutesTests extends BaseTest {
     //Ucitati /admin/cities stranu
     //Verifikovati da se u url-u stranice javlja ruta /login
 
-    @Test(priority = 3)
+    @Test
     public void adminCitiesNotAuthenticated() {
         String exRes  = "https://vue-demo.daniel-avellaneda.com/login";
         getDriver().get("https://vue-demo.daniel-avellaneda.com/admin/cities");
@@ -52,7 +52,7 @@ public class AuthRoutesTests extends BaseTest {
     //Ucitati /admin/users stranu
     //Verifikovati da se u url-u stranice javlja ruta /login
 
-    @Test(priority = 4)
+    @Test
     public void adminUrlNotAuthenticated() {
         String exRes  = "https://vue-demo.daniel-avellaneda.com/login";
         getDriver().get("https://vue-demo.daniel-avellaneda.com/admin/users");

@@ -93,13 +93,11 @@ public class LoginTests extends  BaseTest{
     //asssert:
     //Verifikovati da se u url-u stranice javlja /home ruta
 
-    @Test(priority = 5)
+    @Test
     public void adminLogin() {
         homePage.clickLoginBtn();
         loginPage.login("admin@admin.com", "12345");
-
         getDriverWait().until(ExpectedConditions.urlToBe("https://vue-demo.daniel-avellaneda.com/home"));
-
         String exRes = "https://vue-demo.daniel-avellaneda.com/home";
         String acRes = homePage.getDriver().getCurrentUrl();
         //Verifikovati da se u url-u stranice javlja /home ruta
@@ -114,7 +112,7 @@ public class LoginTests extends  BaseTest{
     //Verifikovati da se nakon pokušaja otvaranja /home rute,
     // u url-u stranice javlja /login ruta (otvoriti sa driver.get home page i proveriti da li vas redirektuje na login)
 
-    @Test(priority = 6)
+    @Test
     public void logoutTest() {
         homePage.clickLoginBtn();
         String exRes = "https://vue-demo.daniel-avellaneda.com/login";

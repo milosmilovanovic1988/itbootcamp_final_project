@@ -15,7 +15,7 @@ public class EditProfileTests extends BaseTest {
     //Verifikovati da je prikazana poruka Profile saved successfuly
     //Verifikovati da svaki input sada za value atribut ima vrednost koja je uneta u okviru forme
 
-    @Test(priority = 1)
+    @Test
     public void editProfileTest() throws InterruptedException {
 
 
@@ -26,10 +26,12 @@ public class EditProfileTests extends BaseTest {
         welcomePage.clickProfileBtn();
         profilePage.editProfile(faker.phoneNumber().phoneNumber(), faker.country().name(), "Cali",  "https://" + faker.internet().domainName(), "https://" + faker.internet().domainName());
 
+        //Verifikovati da je prikazana poruka Profile saved successfuly
         String exRes = "Profile saved successfuly";
         String acResMsg = profilePage.getMessage().getText();
         Assert.assertTrue(acResMsg.contains(exRes));
 
+        //Verifikovati da svaki input sada za value atribut ima vrednost koja je uneta u okviru forme
         String exResCountry = "text";
         String exResTel = "tel";
         String exResCity = "text";
@@ -42,7 +44,7 @@ public class EditProfileTests extends BaseTest {
         String acResGitHubUrl = profilePage.getGitHubUrl().getAttribute("type");
         String acResCountry = profilePage.getCountry().getAttribute("type");
         String acResCity = profilePage.getCityField().getAttribute("type");
-
+        //Verifikovati da svaki input sada za value atribut ima vrednost koja je uneta u okviru forme
         Assert.assertEquals(acResTel, exResTel);
         Assert.assertEquals(acResCountry, exResCountry);
         Assert.assertEquals(acResGitHubUrl, exResGitHubUrl);

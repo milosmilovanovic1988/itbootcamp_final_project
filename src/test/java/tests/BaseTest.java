@@ -63,18 +63,7 @@ public abstract class BaseTest {
     public WebDriverWait getDriverWait() {
         return driverWait;
     }
-    public void setDriver(WebDriver driver) {
-        this.driver = driver;
-    }
-    public void setDriverWait(WebDriverWait driverWait) {
-        this.driverWait = driverWait;
-    }
-    public LoginPage getLoginPage() {
-        return loginPage;
-    }
-    public void setLoginPage(LoginPage loginPage) {
-        this.loginPage = loginPage;
-    }
+
 
    /* @AfterMethod
     public void afterMethod() throws InterruptedException {

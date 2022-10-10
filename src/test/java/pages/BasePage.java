@@ -1,15 +1,12 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public  abstract  class BasePage {
     private WebDriver driver;
     private WebDriverWait webDriverWait;
 
-    public BasePage() {
-    }
 
     public BasePage(WebDriver driver, WebDriverWait webDriverWait) {
         this.driver = driver;

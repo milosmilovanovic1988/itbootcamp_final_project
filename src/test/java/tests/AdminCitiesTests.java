@@ -15,7 +15,7 @@ public class AdminCitiesTests extends  BaseTest{
     //Verifikovati da se u url-u stranice javlja /admin/cities ruta
     //Verifikovati postojanje logout dugmeta
 
-    @Test(priority = 1)
+    @Test
     public void  verifyCitiesPageAndListExists() {
         homePage.clickLoginBtn();
         loginPage.login("admin@admin.com", "12345");
@@ -38,8 +38,8 @@ public class AdminCitiesTests extends  BaseTest{
     //assert:
     //Verifikovati da poruka sadrzi tekst Saved successfull
 
-    @Test(priority = 2)
-    public void newCityIsCreated() {
+    @Test
+    public void newCityIsCreated() throws InterruptedException {
         homePage.clickLoginBtn();
         loginPage.login("admin@admin.com", "12345");
         welcomePage.clickAdminBtn();
@@ -62,7 +62,7 @@ public class AdminCitiesTests extends  BaseTest{
     //assert:
     //Verifikovati da poruka sadrzi tekst Saved successfully
 
-    @Test(priority = 3)
+    @Test(dependsOnMethods = "newCityIsCreated")
     public void cityIsEdited() {
 
         homePage.clickLoginBtn();
@@ -85,7 +85,7 @@ public class AdminCitiesTests extends  BaseTest{
     //assert:
     //Verifikovati da se u Name koloni prvog reda nalazi tekst iz pretrage
 
-    @Test(priority = 4)
+    @Test(dependsOnMethods = "newCityIsCreated")
     public void searchCity() {
         homePage.clickLoginBtn();
         loginPage.login("admin@admin.com", "12345");
@@ -111,7 +111,7 @@ public class AdminCitiesTests extends  BaseTest{
     //Sacekati da popu za prikaz poruke bude vidljiv
     //Verifikovati da poruka sadrzi tekst Deleted successfully
 
-    @Test (priority = 5)
+    @Test
     public void deleteCity() throws InterruptedException {
         homePage.clickLoginBtn();
         String exRes = "Sabac";

@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,7 +14,7 @@ public class ProfilePage extends BasePage {
 
     private By cityField = By.id("city");
 
-    private By newCity = By.xpath("//*[@id=\"list-item-166-1\"]");
+    private By newCity = By.id("city");
 
     private By country = By.id("country");
 
@@ -69,42 +70,29 @@ public class ProfilePage extends BasePage {
     }
 
 
-    public void editProfile(String phone, String country, String twitterUrl, String gitHubUrl){
-        try {
-            Thread.sleep(1000);
-        }catch (InterruptedException e){
-        }
+    public void editProfile(String phone, String country, String city, String twitterUrl, String gitHubUrl) throws InterruptedException {
+        Thread.sleep(2000);
         getPhoneField().sendKeys(phone);
-        try {
-            Thread.sleep(1000);
-        }catch (InterruptedException e){
-        }
-        getCityField().click();
-        try {
-            Thread.sleep(1000);
-        }catch (InterruptedException e){
 
-        }
+        Thread.sleep(2000);
+        getCityField().click();
+
+        Thread.sleep(2000);
         getNewCity().click();
-        try {
-            Thread.sleep(1000);
-        }catch (InterruptedException e){
-        }
+
+        getCityField().sendKeys(city);
+        getCityField().sendKeys(Keys.ENTER);
+
+        Thread.sleep(2000);
         getCountry().sendKeys(country);
-        try {
-            Thread.sleep(1000);
-        }catch (InterruptedException e){
-        }
+
+        Thread.sleep(2000);
         getTwitterUrl().sendKeys(twitterUrl);
-        try {
-            Thread.sleep(1000);
-        }catch (InterruptedException e){
-        }
+
+        Thread.sleep(2000);
         getGitHubUrl().sendKeys(gitHubUrl);
-        try {
-            Thread.sleep(1000);
-        }catch (InterruptedException e){
-        }
+
+        Thread.sleep(2000);
         getSaveButton().click();
     }
 

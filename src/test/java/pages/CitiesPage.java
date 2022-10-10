@@ -65,7 +65,7 @@ public class CitiesPage extends BasePage {
         return getDriver().findElement(deleteButton);
     }
 
-    public WebElement getModalDeleteBtn() {
+    public WebElement getPopUpDeleteBtn() {
         return getDriver().findElement(modalDeleteButton);
     }
 
@@ -91,7 +91,7 @@ public class CitiesPage extends BasePage {
 
     public void deleteCity(){
         getDeleteBtn().click();
-        getModalDeleteBtn().click();
+        getPopUpDeleteBtn().click();
     }
 
     public void getSaveWaiter() {

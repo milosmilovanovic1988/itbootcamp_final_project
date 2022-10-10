@@ -32,7 +32,7 @@ public class SignUpPage extends BasePage {
         return getDriver().findElement(confirmPasswordField);
     }
 
-    public WebElement getSingMeUpButton() {
+    public WebElement getSingMeUpBtn() {
         return getDriver().findElement(singMeUpButton);
     }
 
@@ -49,7 +49,7 @@ public class SignUpPage extends BasePage {
         getEmailField().sendKeys(email);
         getPasswordField().sendKeys(password);
         getConfirmPasswordField().sendKeys(confirmPassword);
-        getSingMeUpButton().click();
+        getSingMeUpBtn().click();
 
     }
 }

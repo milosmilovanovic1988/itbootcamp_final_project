@@ -13,13 +13,13 @@ public class LocaleTests extends  BaseTest{
     //Verifikovati da se na stranici u hederu javlja tekst Page d'atterrissage
 
 
-    @Test
+    @Test (priority = 1)
     public void frLanguage() {
-        String exRes = "Page d'atterrissage";
-        getDriver().get("https://vue-demo.daniel-avellaneda.com/ ");
-        homePage.clicklanguageButton();
+        homePage.clicklanguageBtn();
         driverWait.until(ExpectedConditions.visibilityOf(homePage.getFrLanguage()));
         homePage.clickFrLanguage();
+
+        String exRes = "Page d'atterrissage";
         String acRes = homePage.getHeaderText().getText();
         Assert.assertEquals(acRes,exRes);
     }
@@ -29,12 +29,14 @@ public class LocaleTests extends  BaseTest{
     //Postaviti jezik na EN
     //Verifikovati da se na stranici u hederu javlja tekst Landing
 
-    @Test
+    @Test(priority = 2)
     public void enLanguage() {
-        String exRes = "Landing";
-        homePage.clicklanguageButton();
+
+        homePage.clicklanguageBtn();
         driverWait.until(ExpectedConditions.visibilityOf(homePage.getEnLanguage()));
         homePage.clickEnLanguage();
+
+        String exRes = "Landing";
         String acRes = homePage.getHeaderText().getText();
         Assert.assertEquals(acRes, exRes);
     }
@@ -45,12 +47,14 @@ public class LocaleTests extends  BaseTest{
         //Verifikovati da se na stranici u hederu javlja tekst Página de aterrizaje
 
 
-        @Test
+        @Test(priority = 3)
         public void esLanguage() {
-            String exRes = "Página de aterrizaje";
-            homePage.clicklanguageButton();
+
+            homePage.clicklanguageBtn();
             driverWait.until(ExpectedConditions.visibilityOf(homePage.getEsLanguage()));
             homePage.clickEsLanguage();
+
+            String exRes = "Página de aterrizaje";
             String acRes = homePage.getHeaderText().getText();
             Assert.assertEquals(acRes, exRes);
         }

@@ -4,14 +4,12 @@ import com.github.javafaker.Faker;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.*;
 
-import java.security.ProtectionDomain;
+
 import java.time.Duration;
+
 
 public abstract class BaseTest {
 
@@ -19,7 +17,6 @@ public abstract class BaseTest {
     protected LoginPage loginPage;
     private WebDriver driver;
     protected WebDriverWait driverWait;
-    private String baseUrl = "https://vue-demo.daniel-avellaneda.com";
     protected CitiesPage citiesPage;
     protected HomePage homePage;
     protected ProfilePage profilePage;
@@ -78,6 +75,13 @@ public abstract class BaseTest {
     public void setLoginPage(LoginPage loginPage) {
         this.loginPage = loginPage;
     }
+
+   /* @AfterMethod
+    public void afterMethod() throws InterruptedException {
+        getDriverWait().withTimeout(Duration.ofSeconds(2));
+    }*/
+
+
 
 
 

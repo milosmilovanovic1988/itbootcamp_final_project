@@ -43,6 +43,7 @@ public class EditProfileTests extends BaseTest {
         String acResGitHubUrl = profilePage.getGitHubUrl().getAttribute("type");
         String acResCountry = profilePage.getCountry().getAttribute("type");
         String acResCity = profilePage.getCityField().getAttribute("type");
+
         //Verifikovati da svaki input sada za value atribut ima vrednost koja je uneta u okviru forme
         Assert.assertEquals(acResTel, exResTel);
         Assert.assertEquals(acResCountry, exResCountry);
